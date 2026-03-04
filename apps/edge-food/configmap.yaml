@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: edge-food-html
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Edge Food Menu</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+        body {
+          font-family: Arial;
+          text-align: center;
+          background-color: #f2f2f2;
+        }
+        h1 {
+          color: #333;
+        }
+        .menu {
+          margin-top: 30px;
+        }
+        .item {
+          background: white;
+          padding: 20px;
+          margin: 10px;
+          display: inline-block;
+          border-radius: 10px;
+          box-shadow: 0 0 5px gray;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>Edge Food Menu</h1>
+
+      <div class="menu">
+        <div class="item">🍔 Burger</div>
+        <div class="item">🍕 Pizza</div>
+        <div class="item">🌮 Taco</div>
+        <div class="item">🥤 Juice</div>
+      </div>
+
+    </body>
+    </html>

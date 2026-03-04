@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edge-food-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: edge-food
+  template:
+    metadata:
+      labels:
+        app: edge-food
+    spec:
+      containers:
+      - name: nginx
+        image: public.ecr.aws/nginx/nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: html
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: html
+        configMap:
+          name: edge-food-html
