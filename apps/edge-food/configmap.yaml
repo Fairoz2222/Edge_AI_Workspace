@@ -8,38 +8,99 @@ data:
     <html>
     <head>
       <title>Edge Food Menu</title>
+
+      <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
       <style>
-        body {
-          font-family: Arial;
-          text-align: center;
-          background-color: #f2f2f2;
-        }
-        h1 {
-          color: #333;
-        }
-        .menu {
-          margin-top: 30px;
-        }
-        .item {
-          background: white;
-          padding: 20px;
-          margin: 10px;
-          display: inline-block;
-          border-radius: 10px;
-          box-shadow: 0 0 5px gray;
-        }
+
+      body{
+        margin:0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+        color:white;
+        text-align:center;
+      }
+
+      h1{
+        padding:30px;
+        font-size:40px;
+      }
+
+      .menu{
+        display:flex;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:30px;
+        padding:30px;
+      }
+
+      .card{
+        background:white;
+        color:black;
+        width:200px;
+        border-radius:15px;
+        box-shadow:0 10px 25px rgba(0,0,0,0.3);
+        overflow:hidden;
+        transition:0.3s;
+      }
+
+      .card:hover{
+        transform:scale(1.05);
+        box-shadow:0 15px 35px rgba(0,0,0,0.4);
+      }
+
+      .card img{
+        width:100%;
+        height:140px;
+        object-fit:cover;
+      }
+
+      .card h3{
+        padding:15px;
+      }
+
+      footer{
+        margin-top:40px;
+        padding:20px;
+        font-size:14px;
+        color:#ddd;
+      }
+
       </style>
     </head>
+
     <body>
-      <h1>Edge Food Menu</h1>
+
+      <h1>🍽️ Edge Food Menu</h1>
 
       <div class="menu">
-        <div class="item">🍔 Burger</div>
-        <div class="item">🍕 Pizza</div>
-        <div class="item">🌮 Taco</div>
-        <div class="item">🥤 Juice</div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+          <h3>🍔 Burger</h3>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1601924638867-3ec2f0d6a7fa">
+          <h3>🍕 Pizza</h3>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
+          <h3>🌮 Taco</h3>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307">
+          <h3>🥤 Juice</h3>
+        </div>
+
       </div>
+
+      <footer>
+        Deployed via GitOps using ArgoCD 🚀
+      </footer>
 
     </body>
     </html>
