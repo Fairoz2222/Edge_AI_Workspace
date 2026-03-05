@@ -75,17 +75,17 @@ data:
       <div class="menu">
 
         <div class="card">
-          <img src="/images/burger.jpg">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/RedDot_Burger.jpg">
           <h3>🍔 Burger</h3>
         </div>
 
         <div class="card">
-          <img src="/images/pizza.jpg">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Supreme_pizza.jpg">
           <h3>🍕 Pizza</h3>
         </div>
 
         <div class="card">
-          <img src="/images/taco.jpg">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Tacos_de_carnitas.jpg">
           <h3>🌮 Taco</h3>
         </div>
 
