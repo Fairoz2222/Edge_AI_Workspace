@@ -7,65 +7,63 @@ data:
     <!DOCTYPE html>
     <html>
     <head>
-      <title>Edge Food Menu</title>
-
       <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Edge Food Menu</title>
 
       <style>
 
-      body{
-        margin:0;
-        font-family: Arial, Helvetica, sans-serif;
-        background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-        color:white;
-        text-align:center;
-      }
+        body{
+          margin:0;
+          font-family: Arial, Helvetica, sans-serif;
+          background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+          color:white;
+          text-align:center;
+        }
 
-      h1{
-        padding:30px;
-        font-size:40px;
-      }
+        h1{
+          padding:30px;
+          font-size:40px;
+        }
 
-      .menu{
-        display:flex;
-        justify-content:center;
-        flex-wrap:wrap;
-        gap:30px;
-        padding:30px;
-      }
+        .menu{
+          display:flex;
+          justify-content:center;
+          flex-wrap:wrap;
+          gap:30px;
+          padding:30px;
+        }
 
-      .card{
-        background:white;
-        color:black;
-        width:200px;
-        border-radius:15px;
-        box-shadow:0 10px 25px rgba(0,0,0,0.3);
-        overflow:hidden;
-        transition:0.3s;
-      }
+        .card{
+          background:white;
+          color:black;
+          width:220px;
+          border-radius:15px;
+          box-shadow:0 10px 25px rgba(0,0,0,0.3);
+          overflow:hidden;
+          transition:0.3s;
+        }
 
-      .card:hover{
-        transform:scale(1.05);
-        box-shadow:0 15px 35px rgba(0,0,0,0.4);
-      }
+        .card:hover{
+          transform:scale(1.05);
+          box-shadow:0 15px 35px rgba(0,0,0,0.4);
+        }
 
-      .card img{
-        width:100%;
-        height:140px;
-        object-fit:cover;
-      }
+        .card img{
+          width:100%;
+          height:160px;
+          object-fit:cover;
+        }
 
-      .card h3{
-        padding:15px;
-      }
+        .card h3{
+          padding:15px;
+        }
 
-      footer{
-        margin-top:40px;
-        padding:20px;
-        font-size:14px;
-        color:#ddd;
-      }
+        footer{
+          margin-top:40px;
+          padding:20px;
+          font-size:14px;
+          color:#ddd;
+        }
 
       </style>
     </head>
@@ -77,22 +75,22 @@ data:
       <div class="menu">
 
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+          <img src="/images/burger.jpg">
           <h3>🍔 Burger</h3>
         </div>
 
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1601924638867-3ec2f0d6a7fa">
+          <img src="/images/pizza.jpg">
           <h3>🍕 Pizza</h3>
         </div>
 
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
+          <img src="/images/taco.jpg">
           <h3>🌮 Taco</h3>
         </div>
 
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307">
+          <img src="/images/juice.jpg">
           <h3>🥤 Juice</h3>
         </div>
 
