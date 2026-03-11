@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: edge-weather
-        image: nginx:latest
+        image: registry.k8s.io/nginx-slim:0.8
         ports:
         - containerPort: 80
         volumeMounts:
