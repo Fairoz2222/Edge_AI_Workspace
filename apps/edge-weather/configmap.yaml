@@ -1,0 +1,63 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: edge-weather-html
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title>Edge Weather Dashboard</title>
+    <style>
+    body {
+      font-family: Arial;
+      background: #1f3c5a;
+      color: white;
+      text-align: center;
+    }
+    .container {
+      margin-top: 60px;
+    }
+    .card {
+      background: white;
+      color: black;
+      display: inline-block;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+    </style>
+    </head>
+
+    <body>
+
+    <h1>🌦 Edge Weather Dashboard</h1>
+
+    <div class="container">
+
+    <div class="card">
+    <h2>Boston</h2>
+    <p>🌤 22°C</p>
+    </div>
+
+    <div class="card">
+    <h2>New York</h2>
+    <p>🌧 18°C</p>
+    </div>
+
+    <div class="card">
+    <h2>San Francisco</h2>
+    <p>🌫 16°C</p>
+    </div>
+
+    <div class="card">
+    <h2>London</h2>
+    <p>🌦 14°C</p>
+    </div>
+
+    </div>
+
+    <p>Deployed via GitOps using ArgoCD 🚀</p>
+
+    </body>
+    </html>
