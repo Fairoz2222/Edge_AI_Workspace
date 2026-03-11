@@ -13,8 +13,8 @@ spec:
         app: edge-weather
     spec:
       containers:
-      - name: nginx
-        image: nginx
+      - name: edge-weather
+        image: nginx:latest
         ports:
         - containerPort: 80
         volumeMounts:
