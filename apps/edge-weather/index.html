@@ -8,59 +8,76 @@
 <title>Edge Weather Dashboard</title>
 
 <style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    /* Using a fixed office/tech background to match your screenshot */
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+  }
 
-body {
-  margin:0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background-image: url("https://picsum.photos/1920/1080");
-  background-size: cover;
-  background-position: center;
-  color:white;
-  text-align:center;
-}
+  h1 {
+    margin-top: 40px;
+    font-size: 42px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
 
-h1{
-  margin-top:40px;
-  font-size:42px;
-}
+  .container {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 20px;
+  }
 
-.container{
-  margin-top:80px;
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:40px;
-}
+  .card {
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    width: 240px;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
 
-.card{
-  background:rgba(255,255,255,0.9);
-  color:black;
-  width:240px;
-  padding:30px;
-  border-radius:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.4);
-  transition: transform 0.3s;
-}
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  }
 
-.card:hover{
-  transform: translateY(-8px);
-}
+  h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #222;
+  }
 
-.weather-icon{
-  width:60px;
-  margin-top:10px;
-}
+  .weather-icon {
+    width: 100px; /* Increased size for better visibility */
+    height: 100px;
+    margin: 10px 0;
+    filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.1));
+  }
 
-.temp{
-  font-size:32px;
-  font-weight:bold;
-}
+  .temp {
+    font-size: 36px;
+    font-weight: bold;
+    color: #111;
+  }
 
-.footer{
-  margin-top:80px;
-  font-size:18px;
-}
-
+  .footer {
+    margin-top: 60px;
+    font-size: 18px;
+    background: rgba(0,0,0,0.5);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin-bottom: 40px;
+  }
 </style>
 </head>
 
@@ -70,34 +87,34 @@ h1{
 
 <div class="container">
 
-<div class="card">
-<h2>Boston</h2>
-<img src="images/cloud.png" class="weather-icon">
-<div class="temp">22°C</div>
-</div>
+  <div class="card">
+    <h2>Boston</h2>
+    <img src="https://openweathermap.org/img/wn/01d@4x.png" alt="Sunny" class="weather-icon">
+    <div class="temp">22°C</div>
+  </div>
 
-<div class="card">
-<h2>New York</h2>
-<img src="images/rain.png" class="weather-icon">
-<div class="temp">18°C</div>
-</div>
+  <div class="card">
+    <h2>New York</h2>
+    <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="Partly Cloudy" class="weather-icon">
+    <div class="temp">18°C</div>
+  </div>
 
-<div class="card">
-<h2>San Francisco</h2>
-<img src="images/fog.png" class="weather-icon">
-<div class="temp">16°C</div>
-</div>
+  <div class="card">
+    <h2>San Francisco</h2>
+    <img src="https://openweathermap.org/img/wn/03d@4x.png" alt="Clouds" class="weather-icon">
+    <div class="temp">16°C</div>
+  </div>
 
-<div class="card">
-<h2>London</h2>
-<img src="images/sun.png" class="weather-icon">
-<div class="temp">14°C</div>
-</div>
+  <div class="card">
+    <h2>London</h2>
+    <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="Rain" class="weather-icon">
+    <div class="temp">14°C</div>
+  </div>
 
 </div>
 
 <div class="footer">
-Deployed via GitOps using ArgoCD 🚀
+  Deployed via <b>GitOps</b> using <b>ArgoCD</b> 🚀
 </div>
 
 </body>
