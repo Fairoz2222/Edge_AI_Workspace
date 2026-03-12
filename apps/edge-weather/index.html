@@ -1,121 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edge Weather Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            
+            /* FALLBACK: Deep Blue Gradient if the image fails to load */
+            background: #1e293b; 
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            
+            /* MAIN BACKGROUND: High-res office shot with a dark overlay for text readability */
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                              url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80");
+            
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        h1 {
+            margin: 0;
+            padding-top: 60px;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
 
-<title>Edge Weather Dashboard</title>
+        .container {
+            margin: 60px auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1200px;
+            padding: 0 20px;
+            flex-grow: 1;
+        }
 
-<style>
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    /* Using a fixed office/tech background to match your screenshot */
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: white;
-    text-align: center;
-  }
+        .card {
+            background: rgba(255, 255, 255, 0.98);
+            color: #0f172a;
+            width: 240px;
+            padding: 40px 20px;
+            border-radius: 28px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
 
-  h1 {
-    margin-top: 40px;
-    font-size: 42px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  }
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            background: rgba(255, 255, 255, 1);
+        }
 
-  .container {
-    margin-top: 60px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-    padding: 20px;
-  }
+        h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #334155;
+        }
 
-  .card {
-    background: rgba(255, 255, 255, 0.95);
-    color: #333;
-    width: 240px;
-    padding: 30px;
-    border-radius: 25px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
+        .weather-icon {
+            width: 150px; /* Scaled up to be the focal point of the card */
+            height: 150px;
+            margin: -10px 0;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+        }
 
-  .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-  }
+        .temp {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-top: -10px;
+            color: #1e293b;
+        }
 
-  h2 {
-    margin: 0;
-    font-size: 24px;
-    color: #222;
-  }
+        .footer {
+            padding: 40px 0;
+            font-size: 1.1rem;
+        }
 
-  .weather-icon {
-    width: 100px; /* Increased size for better visibility */
-    height: 100px;
-    margin: 10px 0;
-    filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.1));
-  }
+        .badge {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 10px 24px;
+            border-radius: 100px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.2);
+            display: inline-block;
+        }
 
-  .temp {
-    font-size: 36px;
-    font-weight: bold;
-    color: #111;
-  }
-
-  .footer {
-    margin-top: 60px;
-    font-size: 18px;
-    background: rgba(0,0,0,0.5);
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 50px;
-    margin-bottom: 40px;
-  }
-</style>
+        b {
+            color: #38bdf8; /* Light blue highlights for the tech terms */
+        }
+    </style>
 </head>
-
 <body>
 
-<h1>🌦 Edge Weather Dashboard</h1>
+    <h1>🌦 Edge Weather Dashboard</h1>
 
-<div class="container">
+    <div class="container">
+        <div class="card">
+            <h2>Boston</h2>
+            <img src="https://openweathermap.org/img/wn/01d@4x.png" alt="Sunny" class="weather-icon">
+            <div class="temp">22°C</div>
+        </div>
 
-  <div class="card">
-    <h2>Boston</h2>
-    <img src="https://openweathermap.org/img/wn/01d@4x.png" alt="Sunny" class="weather-icon">
-    <div class="temp">22°C</div>
-  </div>
+        <div class="card">
+            <h2>New York</h2>
+            <img src="https://openweathermap.org/img/wn/02d@4x.png" alt="Partly Cloudy" class="weather-icon">
+            <div class="temp">18°C</div>
+        </div>
 
-  <div class="card">
-    <h2>New York</h2>
-    <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="Partly Cloudy" class="weather-icon">
-    <div class="temp">18°C</div>
-  </div>
+        <div class="card">
+            <h2>San Francisco</h2>
+            <img src="https://openweathermap.org/img/wn/03d@4x.png" alt="Cloudy" class="weather-icon">
+            <div class="temp">16°C</div>
+        </div>
 
-  <div class="card">
-    <h2>San Francisco</h2>
-    <img src="https://openweathermap.org/img/wn/03d@4x.png" alt="Clouds" class="weather-icon">
-    <div class="temp">16°C</div>
-  </div>
+        <div class="card">
+            <h2>London</h2>
+            <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="Rainy" class="weather-icon">
+            <div class="temp">14°C</div>
+        </div>
+    </div>
 
-  <div class="card">
-    <h2>London</h2>
-    <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="Rain" class="weather-icon">
-    <div class="temp">14°C</div>
-  </div>
-
-</div>
-
-<div class="footer">
-  Deployed via <b>GitOps</b> using <b>ArgoCD</b> 🚀
-</div>
+    <div class="footer">
+        <div class="badge">
+            Deployed via <b>GitOps</b> using <b>ArgoCD</b> 🚀
+        </div>
+    </div>
 
 </body>
 </html>
