@@ -1,25 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Edge Weather Dashboard</title>
+
 <style>
+
 body {
-  font-family: Arial;
-  background: #1f3c5a;
-  color: white;
-  text-align: center;
+  margin:0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg,#1f3c5a,#2b5876);
+  color:white;
+  text-align:center;
 }
-.container {
-  margin-top: 60px;
+
+h1{
+  margin-top:40px;
+  font-size:40px;
 }
-.card {
-  background: white;
-  color: black;
-  display: inline-block;
-  padding: 20px;
-  margin: 10px;
-  border-radius: 10px;
+
+.container{
+  margin-top:60px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:30px;
 }
+
+.card{
+  background:white;
+  color:black;
+  width:220px;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 12px 25px rgba(0,0,0,0.3);
+}
+
+.city{
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+.temp{
+  font-size:30px;
+  font-weight:bold;
+}
+
+.footer{
+  margin-top:80px;
+  font-size:18px;
+  opacity:0.9;
+}
+
 </style>
 </head>
 
@@ -30,28 +71,30 @@ body {
 <div class="container">
 
 <div class="card">
-<h2>Boston</h2>
-<p>🌤 22°C</p>
+<div class="city">Boston</div>
+<div class="temp">🌤 22°C</div>
 </div>
 
 <div class="card">
-<h2>New York</h2>
-<p>🌧 18°C</p>
+<div class="city">New York</div>
+<div class="temp">🌧 18°C</div>
 </div>
 
 <div class="card">
-<h2>San Francisco</h2>
-<p>🌫 16°C</p>
+<div class="city">San Francisco</div>
+<div class="temp">🌫 16°C</div>
 </div>
 
 <div class="card">
-<h2>London</h2>
-<p>🌦 14°C</p>
+<div class="city">London</div>
+<div class="temp">🌦 14°C</div>
 </div>
 
 </div>
 
-<p>Deployed via GitOps using ArgoCD 🚀</p>
+<div class="footer">
+Deployed via GitOps using ArgoCD 🚀
+</div>
 
 </body>
 </html>
