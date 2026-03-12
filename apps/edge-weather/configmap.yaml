@@ -97,8 +97,7 @@ data:
       </style>
     </head>
     <body>
-      <!-- <h1>🌦 Edge Weather Dashboard</h1> -->
-      <h1>🌦Welcome Abdul Rahman</h1>
+      <h1>🌦 Edge Weather Dashboard</h1>
 
       <div class="container">
         <div class="card">
